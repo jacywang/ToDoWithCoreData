@@ -16,6 +16,7 @@
 		9CD65BE11B14EF6800B4CE8A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CD65BE01B14EF6800B4CE8A /* Images.xcassets */; };
 		9CD65BE41B14EF6800B4CE8A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CD65BE21B14EF6800B4CE8A /* LaunchScreen.xib */; };
 		9CD65BF01B14EF6800B4CE8A /* ToDoWithCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD65BEF1B14EF6800B4CE8A /* ToDoWithCoreDataTests.m */; };
+		9CD65BFB1B14F24C00B4CE8A /* ToDo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD65BFA1B14F24C00B4CE8A /* ToDo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,8 @@
 		9CD65BE91B14EF6800B4CE8A /* ToDoWithCoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoWithCoreDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CD65BEE1B14EF6800B4CE8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CD65BEF1B14EF6800B4CE8A /* ToDoWithCoreDataTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoWithCoreDataTests.m; sourceTree = "<group>"; };
+		9CD65BF91B14F24C00B4CE8A /* ToDo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDo.h; sourceTree = "<group>"; };
+		9CD65BFA1B14F24C00B4CE8A /* ToDo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +99,8 @@
 				9CD65BE01B14EF6800B4CE8A /* Images.xcassets */,
 				9CD65BE21B14EF6800B4CE8A /* LaunchScreen.xib */,
 				9CD65BD41B14EF6800B4CE8A /* ToDoWithCoreData.xcdatamodeld */,
+				9CD65BF91B14F24C00B4CE8A /* ToDo.h */,
+				9CD65BFA1B14F24C00B4CE8A /* ToDo.m */,
 				9CD65BCD1B14EF6800B4CE8A /* Supporting Files */,
 			);
 			path = ToDoWithCoreData;
@@ -232,6 +237,7 @@
 				9CD65BD31B14EF6800B4CE8A /* AppDelegate.m in Sources */,
 				9CD65BD61B14EF6800B4CE8A /* ToDoWithCoreData.xcdatamodeld in Sources */,
 				9CD65BD01B14EF6800B4CE8A /* main.m in Sources */,
+				9CD65BFB1B14F24C00B4CE8A /* ToDo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
