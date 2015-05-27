@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "DetailViewController.h"
 #import "MasterViewController.h"
+#import "UserListTableViewController.h"
+#import "PickUserTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -19,9 +21,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-    MasterViewController *controller = (MasterViewController *)navigationController.topViewController;
+    UITabBarController *tabController = (UITabBarController *)self.window.rootViewController;
+    UINavigationController *firstNavigationController = (UINavigationController *)[tabController viewControllers][0];
+    MasterViewController *controller = (MasterViewController *)firstNavigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
+    
+    PickUserTableViewController *pickUserTableViewController = [[firstNavigationController viewControllers] lastObject];
+    pickUserTableViewController.managedObjectContext = self.managedObjectContext;
+    
+    UINavigationController *secondNavigationController = (UINavigationController *)[tabController viewControllers][1];
+    UserListTableViewController *userListTableViewController = (UserListTableViewController *)secondNavigationController.topViewController;
+    userListTableViewController.managedObjectContext = self.managedObjectContext;
+    
     return YES;
 }
 

@@ -7,9 +7,16 @@
         <attribute name="title" optional="YES" attributeType="String">
             <userInfo/>
         </attribute>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="toDoList" inverseEntity="User" syncable="YES"/>
         <userInfo/>
     </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="firstname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastname" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="toDoList" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ToDo" inverseName="user" inverseEntity="ToDo" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="ToDo" positionX="261" positionY="189" width="128" height="105"/>
+        <element name="ToDo" positionX="-81" positionY="132" width="128" height="120"/>
+        <element name="User" positionX="261" positionY="216" width="128" height="88"/>
     </elements>
 </model>

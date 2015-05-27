@@ -7,8 +7,12 @@
 //
 
 #import "DetailViewController.h"
+#import "User.h"
+#import "PickUserTableViewController.h"
 
 @interface DetailViewController ()
+
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 
 @end
 
@@ -28,7 +32,13 @@
 - (void)configureView {
     // Update the user interface for the detail item.
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"timeStamp"] description];
+        self.detailDescriptionLabel.text = [self.detailItem valueForKey:@"title"];
+        User *user = [self.detailItem valueForKey:@"user"];
+        if (user != nil) {
+            self.usernameLabel.text = [[user.firstname stringByAppendingString:@" "] stringByAppendingString:user.lastname];
+        } else {
+            self.usernameLabel.text = @"None";
+        }
     }
 }
 
@@ -38,9 +48,18 @@
     [self configureView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self configureView];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"assignUser"]) {
+        PickUserTableViewController *pickUserViewController = segue.destinationViewController;
+        pickUserViewController.managedObjectContext = self.managedObjectContext;
+        pickUserViewController.item = self.detailItem;
+    }
+    
 }
 
 @end
